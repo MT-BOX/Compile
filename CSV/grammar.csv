@@ -1,0 +1,57 @@
+﻿Type,Left,Right
+Expresion,表达式,单表达式 并列表达式$ε
+Expresion,单表达式,x 赋值可选
+Expresion,并列表达式,", 表达式 并列表达式$ε"
+Expresion,赋值可选,赋值符 单表达式$ε
+Expresion,赋值符,=$*=$/=$+=$-=$&=$|=
+Expresion,x,H I
+Expresion,I,一级算符 H I$ε
+Expresion,H,M U
+Expresion,U,二级算符 M U$ε
+Expresion,M,N S
+Expresion,S,三级算符 N S$ε
+Expresion,N,F T
+Expresion,T,四级算符 F T$ε
+Expresion,F,Q R
+Expresion,R,五级算符 Q R$ε
+Expresion,Q,基数 P
+Expresion,P,六级算符 基数 P$ε
+Expresion,基数,( 表达式 )$IDER
+Expresion,IDER,单目运算符 XR
+Expresion,XR,标识符 可选式$数值
+Expresion,后缀运算符,--$++$ε
+Expresion,单目运算符,~$!$++$--$ε$+$-$&$*
+Expresion,可选式,后缀运算符$函数式$数组定义$ε
+Expresion,函数式,( 函数参数 )
+Expresion,数组定义,[ 表达式 ]
+Expresion,函数参数,参数列表 函数参数'$ε
+Expresion,函数参数',", 参数列表 函数参数'$ε"
+Expresion,参数列表,表达式$ε
+Expresion,一级算符,||$&&
+Expresion,二级算符,$>$<$>=$<=$!=$==
+Expresion,三级算符,&$|
+Expresion,四级算符,<<$>>
+Expresion,五级算符,+$-
+Expresion,六级算符,*$/$%
+ID_define,IDER,标识符 后缀运算符$前缀运算符 标识符 后缀运算符
+Function,参数,B C$ε
+Function,C,", 参数 C$ε"
+Function,B,数值关键词 可选标识符$ε
+Function,可选标识符,参数变量 可选参数$ε$标识符 可选参数
+Function,可选参数,数组定义$ε
+Function,数组定义,[ 数组长度 ]
+Function,数组长度,数值$ε
+Function,参数变量,* 标识符$ε
+Function,数值关键词,int$float$double$char$long$short
+Declaration,声明语句,# 声明
+Declaration,声明,导入库文件$全局定义
+Declaration,导入库文件,include 文件名
+Declaration,全局定义,define 标识符 常量
+Declaration,常量,数值$字符串
+Declaration,文件名,字符串$< 标识符 . 后缀名 >
+Declaration,后缀名,标识符
+For,For循环初始语句,for ( 表达式 ; 表达式 ; 表达式 )
+Do,Dowhile循环语句,do { 表达式 } while ( 表达式 ) ;
+While,While循环语句,while ( 表达式 )
+If ,If语句,if 表达式$else可选
+If ,else可选,else 表达式$ε

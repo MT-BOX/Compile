@@ -1,0 +1,14 @@
+data ends
+
+code segment
+start:	mov ax,extended
+	mov es,ax
+	mov ax,stack
+	mov ss,ax
+	mov sp,1024
+	mov bp,sp
+	mov ax,data
+	mov ds,ax
+
+
+

@@ -1,0 +1,48 @@
+int a[10];
+void quicksort(int,int);
+void quicksort(int left,int right){//快速排序
+	int temp;
+	int t,i,j,x;
+	t=(left+right)/2;
+	i=left;
+	j=right;
+	x=a[i];
+	if(i<j){
+	while(i<j){
+		while((a[j]<=x)&&(j>i))
+			j--;
+		if(i<j){
+		temp=a[j];
+		a[j]=a[i];
+		a[i]=temp;                
+		i++;
+		}
+	    while((a[i]>=x)&&(j>i))
+			i++;
+		if(i<j){
+		temp=a[i];
+		a[i]=a[j];
+		a[j]=temp;
+		j--;
+		}
+	}
+	a[j]=x;
+    	quicksort(left,j-1);
+	quicksort(j+1,right);
+	}
+}
+
+void main(){
+        int n;
+        n=read();
+        for(int i=0;i<n;i++){
+             a[i]=read();
+        }
+       quicksort(0,n-1);
+       write("快速排序结果：");
+       for(int i=0;i<n;i++){
+             write(a[i]);
+             write(' ');
+        }
+        write('\n');
+}

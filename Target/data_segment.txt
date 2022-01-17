@@ -1,0 +1,15 @@
+assume cs:code,ds:data,ss:stack,es:extended
+
+extended segment
+	db 1024 dup (0)
+extended ends
+
+stack segment
+	db 1024 dup (0)
+stack ends
+
+data segment
+	_buff_p db 256 dup (24h)
+	_buff_s db 256 dup (0)
+	_msg_p db 0ah,'Output:',0
+	_msg_s db 0ah,'Input:',0
